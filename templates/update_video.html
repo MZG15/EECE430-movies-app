@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}Update Video{% endblock %}
+
+{% block content %}
+
+<h2>Update a Video</h2>
+
+    {% if id_form %}
+        <!-- Step 1: Enter Movie ID -->
+        <form method="POST">
+            {% csrf_token %}
+            {{ id_form.as_p }}
+            <button type="submit">Find Video</button>
+        </form>
+    {% endif %}
+
+    {% if form %}
+        <!-- Step 2: Edit Video Info -->
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Save Changes</button>
+        </form>
+    {% endif %}
+
+{% endblock %}

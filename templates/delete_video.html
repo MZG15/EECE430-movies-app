@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Delete a Video{% endblock %}
+
+{% block content %}
+<h2>Delete a Video</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Delete</button>
+    </form>
+{% endblock %}

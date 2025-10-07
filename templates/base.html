@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <title>{% block title %}Video Store{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'vsapp/styles.css' %}">
+
+</head>
+<body>
+<nav>
+    <a href="{% url 'index' %}">Home</a>
+    <a href="{% url 'add_video' %}">Add a Video</a>
+    <a href="{% url 'display_video' %}">Display Video Information</a>
+    <a href="{% url 'update_video' %}">Update Video</a>
+    <a href="{% url 'delete_video' %}">Delete Video</a>
+</nav>
+
+<div class="content">
+        {% block content %}
+        <!-- Page-specific content goes here -->
+        {% endblock %}
+</div>
+
+</body>
+</html>
