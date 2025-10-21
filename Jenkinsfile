@@ -7,7 +7,7 @@ pollSCM('H/2 * * * *')
 stages {
 stage('Checkout') {
 steps {
-git branch: 'main', url: ‘ YOUR GITHUB URL’
+git branch: 'main', url: 'https://github.com/MZG15/EECE430-movies-app.git'
 }
 }
 stage('Build in Minikube Docker') {
