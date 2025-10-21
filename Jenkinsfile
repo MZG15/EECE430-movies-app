@@ -26,6 +26,8 @@ steps {
 bat '''
 REM === Apply the updated deployment manifest ===
 kubectl apply -f deployment.yaml
+REM === Force restart to pick up new image ===
+kubectl rollout restart deployment/django-deployment
 REM === Ensure the rollout completes ===
 kubectl rollout status deployment/django-deployment
 '''
